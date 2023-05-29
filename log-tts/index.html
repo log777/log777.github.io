@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+tts_article.html
+Version: 1.1  @2023/05/28
+Wenchin Hsieh @Goomo.Net Studio, wenchin@goomo.net
+-->
+ 
+<html lang="zh-tw">
+ 
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>TTS 文字轉語音</title>
+    <style>
+        button {
+            height: 35px;
+            font-size: 16px;
+        }
+    </style>
+ 
+    <script>
+        function convertToSpeech() {
+            const text = document.getElementById('article').value;
+            const speech = new SpeechSynthesisUtterance();
+            speech.text = text;
+            window.speechSynthesis.speak(speech);
+        }
+    </script>
+ 
+</head>
+ 
+<body>
+    <h1>Text-to-Speech 文字轉語音</h1>
+    <textarea id="article" rows="10" style="width:99%" placeholder="在此輸入文字，按 Submit 送出，轉成語音播送。"></textarea>
+    <br>
+    <button onclick="convertToSpeech()">Submit</button>
+ 
+</body>
+ 
+</html>
